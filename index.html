@@ -99,7 +99,8 @@
             <div class="row reveal">
                 <div class="col-md-6 align-self-center mb-4  reveal-1" id="txtLaptop">
                     <h3 class="mb-3">L'association...</h3>
-                    <p>Depuis plus de 50 ans, l'association "Les Belledonnes" vous permet de pratiquer une activité sportive quelque soit
+                    <p>Depuis plus de 50 ans, l'association "Les Belledonnes" vous permet de pratiquer une activité
+                        sportive quelque soit
                         votre niveau et de progresser à votre rythme.
                         <br><br>Crée il y plus de 50 ans, elle regroupe plus de 160 adhérents de tous âges répartis dans
                         3 sports : gymnastique,
@@ -116,7 +117,8 @@
                 </div>
 
                 <div class="col-md-6 reveal-2">
-                    <iframe loading="lazy" width="100%" height="350" src="https://www.youtube.com/embed/aPX7HJ9zCd4" frameborder="0"
+                    <iframe loading="lazy" width="100%" height="350" src="https://www.youtube.com/embed/aPX7HJ9zCd4"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
@@ -254,25 +256,25 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="./js/app-min.js"></script>
 
     <script>
-    // $(function () {
-    //     $('.carousel.lazy-load').bind('slide.bs.carousel', function (e) {
-    //         var image = $(e.relatedTarget).find('img[data-src]');
-    //         image.attr('src', image.data('src'));
-    //         image.removeAttr('data-src');
-    //     });
-    // });
+        // $(function () {
+        //     $('.carousel.lazy-load').bind('slide.bs.carousel', function (e) {
+        //         var image = $(e.relatedTarget).find('img[data-src]');
+        //         image.attr('src', image.data('src'));
+        //         image.removeAttr('data-src');
+        //     });
+        // });
 
-//https://stackoverflow.com/questions/36081559/lazy-load-bootstrap-carousel-without-changing-img-src-attribute
-//https://coderwall.com/p/6qaeya/lazy-carousel-in-bootstrap
-//https://stackoverflow.com/questions/12697216/bootstrap-carousel-lazy-load
-    $(function () {
+        //https://stackoverflow.com/questions/36081559/lazy-load-bootstrap-carousel-without-changing-img-src-attribute
+        //https://coderwall.com/p/6qaeya/lazy-carousel-in-bootstrap
+        //https://stackoverflow.com/questions/12697216/bootstrap-carousel-lazy-load
+        $(function () {
             return $(".carousel.lazy-load").on("slide.bs.carousel", function (ev) {
                 var lazy;
                 lazy = $(ev.relatedTarget).find("img[data-src]");
@@ -280,27 +282,27 @@
                 lazy.removeAttr("data-src");
             });
         });
-        
+
 
         document.addEventListener("DOMContentLoaded", function () {
-                var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
+            var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
 
-                if ("IntersectionObserver" in window) {
-                    let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
-                        entries.forEach(function (entry) {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add("visible");
-                                lazyBackgroundObserver.unobserve(entry.target);
-                            }
-                        });
+            if ("IntersectionObserver" in window) {
+                let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            lazyBackgroundObserver.unobserve(entry.target);
+                        }
                     });
+                });
 
-                    lazyBackgrounds.forEach(function (lazyBackground) {
-                        lazyBackgroundObserver.observe(lazyBackground);
-                    });
-                }
-            });
-        
+                lazyBackgrounds.forEach(function (lazyBackground) {
+                    lazyBackgroundObserver.observe(lazyBackground);
+                });
+            }
+        });
+
     </script>
     <!-- <script type="text/javascript" src="./js/lazysizes-min.js"></script> -->
 </body>

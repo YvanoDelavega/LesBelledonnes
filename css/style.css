@@ -171,8 +171,18 @@ section {
 /*  section etes vous pret ? */
 /*************************/
 
+.lazy-background {
+  background-image: url("../img/banniere_placeholder.jpg"); /* Placeholder image */
+
+}
+
+.lazy-background.visible {
+  background-image: url("../img/banniere.jpg"); /* The final image */
+
+}
+
 #section-contact {
-  background-image: url("../img/banniere.jpg");
+ 
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;

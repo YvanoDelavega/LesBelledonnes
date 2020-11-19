@@ -99,7 +99,7 @@
             <div class="row reveal">
                 <div class="col-md-6 align-self-center mb-4  reveal-1" id="txtLaptop">
                     <h3 class="mb-3">L'association...</h3>
-                    <p>L'association "Les Belledonnes" vous permet de pratiquer une activité sportive quelque soit
+                    <p>Depuis plus de 50 ans, l'association "Les Belledonnes" vous permet de pratiquer une activité sportive quelque soit
                         votre niveau et de progresser à votre rythme.
                         <br><br>Crée il y plus de 50 ans, elle regroupe plus de 160 adhérents de tous âges répartis dans
                         3 sports : gymnastique,
@@ -149,7 +149,7 @@
 
                 <div class="col-md-4 text-center reveal-1">
 
-                    <img class="img-sport" src="./img/gym.png" alt="gymnastique artistique">
+                    <img class="img-sport" loading="lazy" src="./img/gym.png" alt="gymnastique artistique">
                     <h4 class="my-4">Gymnastique</h4>
                     <p>Accessible de 5 à 18 ans</p>
                     <p>L'association offre la possibilité aux enfants et aux ados de pratiquer la
@@ -160,7 +160,7 @@
                     </p>
                 </div>
                 <div class="col-md-4 text-center ico-sport reveal-2">
-                    <img class="img-sport" src="./img/ping.png" alt="raquette de ping-pong">
+                    <img class="img-sport" loading="lazy" src="./img/ping.png" alt="raquette de ping-pong">
                     <h4 class="my-4">Tennis de table</h4>
 
                     <p> Ouvert à tous à partir de 7 ans.</p>
@@ -174,7 +174,7 @@
 
                 </div>
                 <div class="col-md-4 text-center ico-sport reveal-3">
-                    <img class="img-sport" src="./img/bad.png" alt="raquette et volant de badminton">
+                    <img class="img-sport" loading="lazy" src="./img/bad.png" alt="raquette et volant de badminton">
                     <h4 class="my-4">Badminton</h4>
                     <p>Le badminton est ouvert à partir de 16 ans.</p>
                     <p>
@@ -198,8 +198,8 @@
 
 
     <!-- call to action -->
-    <section id="section-contact">
-        <div class="layer-separation reveal">
+    <section id="section-contact" class="lazy-background">
+        <div class="layer-separation   reveal">
             <br><br>
             <div class="container text-center reveal-1">
                 <h2>Êtes-vous prêt ?</h2>
@@ -281,6 +281,25 @@
             });
         });
         
+
+        document.addEventListener("DOMContentLoaded", function () {
+                var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
+
+                if ("IntersectionObserver" in window) {
+                    let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("visible");
+                                lazyBackgroundObserver.unobserve(entry.target);
+                            }
+                        });
+                    });
+
+                    lazyBackgrounds.forEach(function (lazyBackground) {
+                        lazyBackgroundObserver.observe(lazyBackground);
+                    });
+                }
+            });
         
     </script>
     <!-- <script type="text/javascript" src="./js/lazysizes-min.js"></script> -->
